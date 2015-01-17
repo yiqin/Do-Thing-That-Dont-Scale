@@ -62,7 +62,6 @@
     self.userPhotoSize = 100.0;
     
     self.userPhoto = [[UIImageView alloc] init];
-    // self.userPhoto.image = [UIImage imageNamed:@"ext.jpeg"];
     
     
     if ([UserManager sharedInstance].hasLoginWithTwitter) {
@@ -86,14 +85,13 @@
     else {
         self.usernameLabel.text = [[UserManager sharedInstance].name uppercaseString];
     }
-    // self.usernameLabel.text = [[UserManager sharedInstance].name uppercaseString];
     self.usernameLabel.textAlignment = NSTextAlignmentCenter;
     self.usernameLabel.textColor = [UIColor whiteColor];
     [self.view addSubview: self.usernameLabel];
     
     
     self.createYourFavoriteLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 30)];
-    self.createYourFavoriteLabel.text = @"Recommend your favorite iOS app!";
+    self.createYourFavoriteLabel.text = @"Post your beta testing app!";
     self.createYourFavoriteLabel.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview: self.createYourFavoriteLabel];
     
@@ -121,38 +119,6 @@
     self.arrowPhoto = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
     [self.view addSubview:self.arrowPhoto];
     
-    /*
-    TWTRLogInButton *logInButton = [TWTRLogInButton buttonWithType:UIButtonTypeCustom];
-    logInButton.center = self.view.center;
-    [self.view addSubview:logInButton];
-    */
-    
-    /*
-    TWTRLogInButton *logInButton = [TWTRLogInButton buttonWithLogInCompletion:^(TWTRSession *session, NSError *error) {
-        // play with Twitter session
-        
-        if (session) {
-            NSLog(@"signed in as %@", [session userName]);
-            
-            [[[Twitter sharedInstance] APIClient] loadUserWithID:[session userID]
-                                                      completion:^(TWTRUser *user,
-                                                                   NSError *error)
-            {
-                // handle the response or error
-                NSLog(@"%@", user.profileImageLargeURL);
-                
-                
-            }];
-            
-            
-        } else {
-            NSLog(@"error: %@", [error localizedDescription]);
-            
-        }
-        
-    }];
-    */
-    
     self.profileSelectionTVC = [[ProfileSelectionTableViewController alloc] initWithNibName:nil bundle:nil];
     self.profileSelectionTVC.delegate = self;
     self.navigationController.delegate = nil;
@@ -162,7 +128,6 @@
 
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    // [self.navigationController setNavigationBarHidden:NO animated:YES];
     if (![[UserManager sharedInstance] checkUserLoginWithTwitter]) {
         self.userPhoto.image = [UIImage imageNamed:@"profile"];
         self.userPhoto.backgroundColor = [UIColor colorWithRed:0.95 green:0.95 blue:0.95 alpha:0.98];

@@ -25,7 +25,6 @@ class ProductDetailViewController: UIViewController {
         view.addSubview(productDetailTVC.view)
         view.backgroundColor = UIColor.whiteColor()
         
-        
         // No getAppButton now.
         getAppButton.titleLabel?.font = UIFont(name: "Lato-Regular", size: 15)
         getAppButton.setTitle("GET", forState: UIControlState.Normal)
@@ -126,8 +125,5 @@ class ProductDetailViewController: UIViewController {
             // ...
         }
         
-        
     }
-
-    
 }

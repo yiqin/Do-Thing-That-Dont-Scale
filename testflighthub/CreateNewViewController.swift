@@ -13,7 +13,7 @@ class CreateNewViewController: UIViewController, UICollectionViewDelegate, UICol
     
     
     var typeCollectionView = UICollectionView(frame: CGRectMake(0, 0, 100, 100), collectionViewLayout:UICollectionViewFlowLayout())     // this is a hard problem.....
-    let typeNames = ["Name", "Hashtag", "Review"]
+    let typeNames = ["Name", "Tagline", "Screenshots"]
     let typeIcons = []
     
     var bottomView = UIView()
@@ -160,8 +160,8 @@ class CreateNewViewController: UIViewController, UICollectionViewDelegate, UICol
         upView.backgroundColor = UIColor(fromHexString: "D9D9D9")
         view.addSubview(upView)
         
-        
-        beginningLabel.text = "—  RECOMMEND  A  NEW  APP  —"
+        // your beta testing app
+        beginningLabel.text = "—  POST  YOUR  BETA  TESTING  APP  —"
         beginningLabel.textAlignment = NSTextAlignment.Center
         upView.addSubview(beginningLabel)
         
