@@ -75,6 +75,7 @@ class CreatingNewProductDataManager: NSObject {
             println(image?.size.height)
             screenshots.addObject(image!)
         }
+        isThirdStepFinished = true
     }
     
     func onlyCheckAllValue()->Bool {

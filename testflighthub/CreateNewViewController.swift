@@ -269,7 +269,7 @@ class CreateNewViewController: UIViewController, UICollectionViewDelegate, UICol
         if(CreatingNewProductDataManager.sharedInstance.onlyCheckAllValue() && !UserManager.sharedInstance.hasLoginWithTwitter){
             TestMixpanel.pressCreatePost()
             
-            let alertController = UIAlertController(title: "Post a New App", message: "You need to login with Twitter to finish. Or you can post a new app as an anoymous user. After we review your post, the app is processed to the trending page and the recent page.", preferredStyle: .Alert)
+            let alertController = UIAlertController(title: "Post a New Beta App", message: "You need to login with Twitter to finish.", preferredStyle: .Alert)
             
             let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in
                 // ...
@@ -319,8 +319,7 @@ class CreateNewViewController: UIViewController, UICollectionViewDelegate, UICol
                 SVProgressHUD.show()
                 self.saveAndDismiss()
             }
-            alertController.addAction(anonymousAction)
-            
+            // alertController.addAction(anonymousAction)
             
             self.presentViewController(alertController, animated: true) {
                 
@@ -402,8 +401,8 @@ class CreateNewViewController: UIViewController, UICollectionViewDelegate, UICol
             TestMixpanel.pressCreateHashtag()
         }
         else {
-            // addScreenshotsAboutProduct()
-            addReview()
+            addScreenshotsAboutProduct()
+            // addReview()
             TestMixpanel.pressCreateReview()
         }
     }
@@ -433,12 +432,9 @@ class CreateNewViewController: UIViewController, UICollectionViewDelegate, UICol
     
     func swipeDown(recognizer:UISwipeGestureRecognizer){
         println("Swipe down.")
-        // Disable swipe down.
-        /*
         self.dismissViewControllerAnimated(true, completion: { () -> Void in
             
         })
-        */
     }
     
     func addTextAboutProduct(){
@@ -468,11 +464,10 @@ class CreateNewViewController: UIViewController, UICollectionViewDelegate, UICol
     }
     
     func addScreenshotsAboutProduct(){
+        
+        addScreenshotsAboutProductFromUser();
+        
         /*
-        QBImagePickerController *imagePickerController = [[QBImagePickerController alloc] init];
-        imagePickerController.delegate = self;
-        imagePickerController.allowsMultipleSelection = YES;
-        */
         var alertView: UIAlertView = UIAlertView()
         
         alertView.delegate = self
@@ -484,6 +479,7 @@ class CreateNewViewController: UIViewController, UICollectionViewDelegate, UICol
         alertView.addButtonWithTitle("Cancel")
         
         alertView.show()
+        */
     }
     
     func alertView(View: UIAlertView!, clickedButtonAtIndex buttonIndex: Int){
