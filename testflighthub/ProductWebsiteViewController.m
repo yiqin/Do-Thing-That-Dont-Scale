@@ -23,7 +23,7 @@
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"showTabBarUIViewTwo" object:nil];
+    // [[NSNotificationCenter defaultCenter] postNotificationName:@"showTabBarUIViewTwo" object:nil];
 }
 
 - (void)didReceiveMemoryWarning {

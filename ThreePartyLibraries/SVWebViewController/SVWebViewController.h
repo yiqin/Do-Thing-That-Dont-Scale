@@ -12,7 +12,6 @@
 - (instancetype)initWithURL:(NSURL*)URL;
 - (instancetype)initWithURLRequest:(NSURLRequest *)request;
 
-- (void)viewDidLoad;
-- (void)viewWillDisappear:(BOOL)animated;
+@property (nonatomic, weak) id<UIWebViewDelegate> delegate;
 
 @end

@@ -394,10 +394,20 @@ class ProductDetailTableViewController: UITableViewController, AddTextPopoverDel
     
     func updateDescriptionTableCell(){
         println("update description table cell.........")
-        isDescriptionMoreMode = true
+        // isDescriptionMoreMode = true
         
-        let indexPath = NSIndexPath(forRow: 3, inSection: 0)
-        tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
+        // let indexPath = NSIndexPath(forRow: 3, inSection: 0)
+        // tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
+        
+        /*
+        ProductWebsiteViewController *webViewController = [[ProductWebsiteViewController alloc] initWithURL:url];
+        
+        self.navigationController.delegate = nil;
+        [self.navigationController pushViewController:webViewController animated:YES];
+        */
+        
+        
+        
         
     }
 }

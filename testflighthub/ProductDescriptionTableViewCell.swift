@@ -77,12 +77,17 @@ class ProductDescriptionTableViewCell: UITableViewCell {
         }
         isMore = isDescriptionMoreMode
         
-        nameLabel.text = "Description".uppercaseString
+        nameLabel.text = "RELATED LINKS".uppercaseString
         taglineLable.text = product.appDescription
     }
     
     func loadMoreDescription(){
-        delegate?.updateDescriptionTableCell()
+        // delegate?.updateDescriptionTableCell()
+        
+        
+        NSNotificationCenter.defaultCenter().postNotificationName("ProductMoveToWebsite", object: nil)
+        
+        
     }
     
     class func cellHeight(product:Product, isDescriptionMoreMode:Bool)->CGFloat{

@@ -43,8 +43,17 @@ class ProductDetailViewController: UIViewController {
         
         var swipeRight = UISwipeGestureRecognizer(target: self, action: "swipeRight:")
         self.view.addGestureRecognizer(swipeRight)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "moveToWebsite", name: "ProductMoveToWebsite", object: nil)
     }
 
+    func moveToWebsite() {
+        
+        var webViewController = ProductWebsiteViewController(URL: product.website)
+        navigationController?.pushViewController(webViewController, animated: true)
+    
+    }
+    
     required init(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
