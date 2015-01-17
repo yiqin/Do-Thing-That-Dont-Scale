@@ -308,24 +308,6 @@
             </objects>
             <point key="canvasLocation" x="-750" y="-198"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="Rnl-bq-wM0">
-            <objects>
-                <navigationController hidesBottomBarWhenPushed="YES" id="ubO-fW-eR2" customClass="NTNavigationController" customModule="testflighthub" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" id="P1U-WM-T9z"/>
-                    <nil key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0in-In-kz7">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="gsg-3j-hHm" kind="relationship" relationship="rootViewController" id="qit-pz-9BH"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="CW0-Ty-uKi" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2944" y="150"/>
-        </scene>
         <!--Create New View Controller-->
         <scene sceneID="j9t-mR-Ge3">
             <objects>
@@ -381,29 +363,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Run-8e-EA8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="742" y="-198"/>
-        </scene>
-        <!--E X P L O R E-->
-        <scene sceneID="knT-o3-RMw">
-            <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="gsg-3j-hHm" customClass="NTWaterfallViewController" customModule="testflighthub" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="2gp-NP-TGo"/>
-                        <viewControllerLayoutGuide type="bottom" id="tcL-aV-Zry"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ORD-Qb-5LM" customClass="UICollectionView">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="E X P L O R E" id="wM5-HF-XsL"/>
-                    <nil key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <segue destination="zHO-8L-gYt" kind="show" identifier="PushSegure1" id="Obj-xi-yjt"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="C4L-pn-zBN" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2944" y="890"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
