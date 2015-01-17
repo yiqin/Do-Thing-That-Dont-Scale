@@ -69,7 +69,7 @@ class ProductBriefTableViewCell: UITableViewCell {
     
     
     func setContentValue(product:Product){
-        nameLabel.text = "Why  it's  special".uppercaseString
+        nameLabel.text = "Tagline".uppercaseString
         taglineLable.text = product.review
         userLabel.text = product.postedByUsername
         

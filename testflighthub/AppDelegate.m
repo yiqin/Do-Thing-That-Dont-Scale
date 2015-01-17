@@ -103,6 +103,7 @@
     // Setting SVProgress
     [SVProgressHUD setForegroundColor:[UIColor colorFromHexString:@"00a0e9"]];
     [SVProgressHUD setRingThickness:4.00];
+    [SVProgressHUD setBackgroundColor:[UIColor clearColor]];
     
     
     // YO Notification

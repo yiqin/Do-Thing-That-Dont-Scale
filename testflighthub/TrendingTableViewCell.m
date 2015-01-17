@@ -70,9 +70,9 @@
         self.nameLabel.textColor = [UIColor colorWithRed:51.0/255.0 green:54.0/255.0 blue:54.0/255.0 alpha:1.0];
         
         self.descriptionLabel = [[YQLabel alloc] init];
-        self.descriptionLabel.font = [UIFont fontWithName:@"Lato-Regular" size:16.0];
-        self.descriptionLabel.yqNumberOfLine = 3;
-        self.descriptionLabel.textColor = [UIColor grayColor];
+        self.descriptionLabel.font = [UIFont fontWithName:@"Lato-Regular" size:15.0];
+        self.descriptionLabel.yqNumberOfLine = 2;
+        self.descriptionLabel.textColor = [UIColor blackColor];
         
         self.taglineLabel = [[YQLabel alloc] init];
         self.taglineLabel.font = [UIFont fontWithName:@"Lato-Regular" size:15.0];
@@ -187,7 +187,7 @@
     
     self.timeLabel.frame = CGRectMake(CGRectGetWidth(self.frame)-70, CGRectGetMinY(self.nameLabel.frame), 55, 30);
     
-    [self.descriptionLabel setFrame:CGRectMake(82.0f, 66.0f, CGRectGetWidth(self.frame)-100, 50) font:self.descriptionLabel.font text:self.descriptionLabel.text];
+    [self.descriptionLabel setFrame:CGRectMake(82.0f, 70.0f, CGRectGetWidth(self.frame)-100, 50) font:self.descriptionLabel.font text:self.descriptionLabel.text];
     
     [self.taglineLabel setFrame:CGRectMake(82.0f, CGRectGetMaxY(self.nameLabel.frame)+2, CGRectGetWidth(self.frame)-100, 50) font:self.taglineLabel.font text:self.taglineLabel.text];
     
@@ -363,7 +363,7 @@
 
 + (CGFloat)cellHeight
 {
-    return 150; // two lines... 150
+    return 160+5; // two lines... 150
     // three lines is 160+10
 }
 
