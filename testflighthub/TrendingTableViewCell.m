@@ -54,7 +54,7 @@
         self.iconImageView.layer.cornerRadius = 5;
         self.iconImageView.clipsToBounds = YES;
         
-        self.iconImageView.contentMode = UIViewContentModeScaleAspectFit;
+        self.iconImageView.contentMode = UIViewContentModeScaleAspectFill;
         
         
         self.timeLabel = [[UILabel alloc] init];
@@ -70,7 +70,7 @@
         self.nameLabel.textColor = [UIColor colorWithRed:51.0/255.0 green:54.0/255.0 blue:54.0/255.0 alpha:1.0];
         
         self.descriptionLabel = [[YQLabel alloc] init];
-        self.descriptionLabel.font = [UIFont fontWithName:@"Lato-Regular" size:13.0];
+        self.descriptionLabel.font = [UIFont fontWithName:@"Lato-Regular" size:16.0];
         self.descriptionLabel.yqNumberOfLine = 3;
         self.descriptionLabel.textColor = [UIColor grayColor];
         
@@ -129,9 +129,18 @@
 {
     if (product.isLoadingIconImage) {
         self.iconImageView.file = [object objectForKey:@"iconImage"];
-        [self.iconImageView loadInBackground:^(UIImage *image, NSError *error) {
-            NSLog(@"successfully loading");
-        }];
+        if (self.iconImageView.file) {
+            [self.iconImageView loadInBackground:^(UIImage *image, NSError *error) {
+                NSLog(@"successfully loading");
+            }];
+        }
+        else {
+            self.iconImageView.file = [object objectForKey:@"coverImage"];
+            [self.iconImageView loadInBackground:^(UIImage *image, NSError *error) {
+                NSLog(@"successfully loading");
+            }];
+        }
+        
     }
     else {
         self.iconImageView.image = product.iconImage;
@@ -141,7 +150,7 @@
     
     
     //cell.descriptionLabel.text = [object objectForKey:@"appDescription"];
-    NSString *tempDescription = [object objectForKey:@"appDescription"];
+    NSString *tempDescription = [object objectForKey:@"tagline"];
     self.descriptionLabel.text = [tempDescription stringByReplacingOccurrencesOfString:@"\n" withString:@""];
     // self.taglineLabel.text = [object objectForKey:@"tagline"];
     
@@ -354,7 +363,7 @@
 
 + (CGFloat)cellHeight
 {
-    return 170; // two lines... 150
+    return 150; // two lines... 150
     // three lines is 160+10
 }
 

@@ -103,6 +103,16 @@ class Product: NSTestObject {
                     self.isLoadingIconImage = false
             }
         }
+        else {
+            let coverImagePFImageView = PFImageView()
+            if let tempCoverImagePFFile = parseObject["coverImage"] as? PFFile {
+                coverImagePFImageView.file = tempCoverImagePFFile
+                coverImagePFImageView.loadInBackground { (image:UIImage!, error:NSError!) -> Void in
+                    self.iconImage = image
+                    self.isLoadingIconImage = false
+                }
+            }
+        }
         
         let postedByProfileImagePFImageView = PFImageView()
         if let tempPostedByProfileImagePFFile = parseObject["postedByProfileImage"] as? PFFile {
