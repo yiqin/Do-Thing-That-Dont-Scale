@@ -654,7 +654,7 @@ class CreateNewViewController: UIViewController, UICollectionViewDelegate, UICol
     // add tagline
     //*********************
     func addHashtags(){
-        addTextPopoverView = AddTextPopoverView(frame: CGRectMake(1.5*xPadding, 44, CGRectGetWidth(view.frame)-3*xPadding, 250), title: "Add Hashtag", placeholder:"Enter here... (For example social, game)")
+        addTextPopoverView = AddTextPopoverView(frame: CGRectMake(1.5*xPadding, 44, CGRectGetWidth(view.frame)-3*xPadding, 250), title: "Add Tagline", placeholder:"Very short description of the product (make it catchy!)")
         addTextPopoverView.tag = 0
         addTextPopoverView.delegate = self
         view.addSubview(addTextPopoverView)
