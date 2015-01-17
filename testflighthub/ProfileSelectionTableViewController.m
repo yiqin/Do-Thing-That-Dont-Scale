@@ -67,7 +67,7 @@
     
     NSString *tempText = @"";
     if (indexPath.row == 0) {
-        tempText = @"My Recommendations";
+        tempText = @"My Beta Apps";
     }
     else if (indexPath.row == 1) {
         tempText = @"My Likes";

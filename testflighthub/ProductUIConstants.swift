@@ -11,9 +11,9 @@ import UIKit
 
 // let kUnderlineColor = UIColor.crimsonColor()
 let kUnderlineColor = UIColor(fromHexString: "ffcc00")
-let kNamelabelColor = UIColor(fromHexString: "5e656d")
+let kNamelabelColor = UIColor.blackColor() // 5e656d
 
-let kNamelabelFont = UIFont(name:"Lato-Bold", size: 13)
+let kNamelabelFont = UIFont(name:"Lato-Bold", size: 14)
 
 let kUnderlineWidth : CGFloat = 40
 let kUnderlineHeight : CGFloat = 2.5

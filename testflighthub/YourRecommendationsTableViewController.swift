@@ -16,7 +16,7 @@ class YourRecommendationsTableViewController: UITableViewController, UITableView
         super.viewDidLoad()
         TestMixpanel.enteredYourRecommendationsView()
         
-        title = "R e c o m m e n d a t i o n s".uppercaseString     // This is too long.
+        title = "B E T A".uppercaseString     // This is too long.
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -118,7 +118,7 @@ class YourRecommendationsTableViewController: UITableViewController, UITableView
                 cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: cellIdentifier)
             }
             
-            cell?.textLabel?.text = "No Recommendations Now"
+            cell?.textLabel?.text = "No Post Now"
             
             return cell!
             
