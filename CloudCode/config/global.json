@@ -1,8 +1,8 @@
 {
     "applications": {
         "Do Thing that Don't Scale": {
-            "applicationId": "Bgt4AQ7b9W1HvS06DArUO2oc4yLZP7oiEMB2p2y2", 
-            "masterKey": "LWLFuEE1Et1uFyLyk4gJUhqoPV0uBDfJ0EcjoK5F"
+            "applicationId": "E7StxK5eRXAok9R4Ohen8TjNxspF7N97ogokzsSa", 
+            "masterKey": "bosWJvVfFYofhzhIDqIm68Nsa5luOXhYqj0H1ctg"
         }, 
         "_default": {
             "link": "Do Thing that Don't Scale"
