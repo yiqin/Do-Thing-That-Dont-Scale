@@ -71,6 +71,14 @@ class ProductDetailViewController: UIViewController {
         NSNotificationCenter.defaultCenter().postNotificationName("hideTabBarUIViewTwo", object: nil)
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        NSNotificationCenter.defaultCenter().postNotificationName("hideTabBarUIViewTwo", object: nil)
+    }
+    
+    // ##############################
+    // This is the problem........
+    // ##############################
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         NSNotificationCenter.defaultCenter().postNotificationName("showTabBarUIViewTwo", object: nil)

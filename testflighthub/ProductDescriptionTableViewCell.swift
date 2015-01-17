@@ -43,7 +43,7 @@ class ProductDescriptionTableViewCell: UITableViewCell {
         // taglineLable.textColor = mainColor
         addSubview(taglineLable)
         
-        moreButton.setTitle("more...", forState: UIControlState.Normal)
+        moreButton.setTitle("...", forState: UIControlState.Normal)
         moreButton.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Left
         moreButton.titleLabel?.font = UIFont(name:"Lato-Regular", size: 15)
         moreButton.setTitleColor(UIColor.infoBlueColor(), forState: UIControlState.Normal)
@@ -65,7 +65,7 @@ class ProductDescriptionTableViewCell: UITableViewCell {
         taglineLable.setFrame(CGRectMake(xPadding, 50.0, screenWidth-2*xPadding, CGRectGetHeight(frame)), font: self.taglineLable.font, text: taglineLable.text)
         
         if(!isMore) {
-            moreButton.frame = CGRectMake(xPadding, CGRectGetMaxY(taglineLable.frame), 50, 25)
+            moreButton.frame = CGRectMake(xPadding, CGRectGetMaxY(taglineLable.frame), 400, 25)
         }
     }
     
@@ -79,6 +79,8 @@ class ProductDescriptionTableViewCell: UITableViewCell {
         
         nameLabel.text = "RELATED LINKS".uppercaseString
         taglineLable.text = product.appDescription
+        
+        moreButton.setTitle(product.website.absoluteString, forState: UIControlState.Normal)
     }
     
     func loadMoreDescription(){

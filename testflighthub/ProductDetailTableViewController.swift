@@ -36,7 +36,7 @@ class ProductDetailTableViewController: UITableViewController, AddTextPopoverDel
     }
     
     override func viewDidLoad() {
-        // self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None;
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None;
         
         super.viewDidLoad()
         
