@@ -45,7 +45,7 @@
         
         
         self.messageLabel = [[YQLabel alloc] init];
-        self.messageLabel.font = [UIFont fontWithName:@"Lato-Regular" size:15.0];
+        self.messageLabel.font = [UIFont fontWithName:@"Lato-Regular" size:13.0];
         self.messageLabel.numberOfLines = 2;
         [self addSubview:self.messageLabel];
         

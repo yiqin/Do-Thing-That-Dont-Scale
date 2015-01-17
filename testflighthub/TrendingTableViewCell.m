@@ -66,7 +66,7 @@
         
         
         self.nameLabel = [[UILabel alloc] init];
-        self.nameLabel.font = [UIFont fontWithName:@"Lato-Bold" size:17.0];
+        self.nameLabel.font = [UIFont fontWithName:@"OpenSans-Bold" size:17.0];
         self.nameLabel.textColor = [UIColor colorWithRed:51.0/255.0 green:54.0/255.0 blue:54.0/255.0 alpha:1.0];
         
         self.descriptionLabel = [[YQLabel alloc] init];
@@ -192,21 +192,18 @@
 
 - (void)goToAppStore:(UIButton*)button
 {
-    if (self.product.isOnAppStore) {
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Get the App" message:@"You are going to move to App Store." delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Continue", nil];
-        [alertView show];
-    }
-    else {
-        [self.delegate openWebsiteWithAddress:self.product.website];
-    }
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Get the App" message:@"You are going to share your email to the creator of the beta testing app. It's under the policy of Test Flight Program From Apple." delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Share", nil];
+    [alertView show];
 }
 
 #pragma mark - UIAlertView
 - (void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     switch (buttonIndex) {
-        case 1:
-            [[UIApplication sharedApplication] openURL:self.product.website];
+        case 1:{
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Thank you" message:@"You will receive the invitation to the app soon. Hope you enjoy the app." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [alertView show];
+        }
             break;
         default:
             break;
