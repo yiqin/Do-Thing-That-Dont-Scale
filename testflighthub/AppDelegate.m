@@ -31,8 +31,8 @@
     
     // 455A64
     // 607D8B
-    [[UINavigationBar appearance] setBarTintColor:[UIColor colorFromHexString:@"607D8B"]];
-    [[UITabBar appearance] setTintColor:[UIColor colorFromHexString:@"607D8B"]];
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorFromHexString:@"5e656d"]];
+    [[UITabBar appearance] setTintColor:[UIColor colorFromHexString:@"5e656d"]];
     // White or black
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
