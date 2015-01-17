@@ -200,7 +200,7 @@
 - (void)goToAppStore:(UIButton*)button
 {
     if (self.product.isOnAppStore) {
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Get the App" message:@"You are going to move to App Store." delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Continue", nil];
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Get the App" message:@"You are going to share your email to the creator of the beta testing app." delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Share", nil];
         [alertView show];
     }
     else {
@@ -212,9 +212,11 @@
 - (void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     switch (buttonIndex) {
-        case 1:
-            [[UIApplication sharedApplication] openURL:self.product.website];
+        case 1: {
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Thank you" message:@"You will receive the invitation to the app soon. Hope you enjoy the app." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [alertView show];
             break;
+        }
         default:
             break;
     }

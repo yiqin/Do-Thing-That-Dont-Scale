@@ -569,7 +569,25 @@ class CreateNewViewController: UIViewController, UICollectionViewDelegate, UICol
         addTextView.backgroundColor = UIColor(red: 41.0/255.0, green: 45.0/255.0, blue: 53.0/255.0, alpha: 0.8)
         upView.addSubview(addTextView)
         
-        let tempBackButton = UIButton(frame: CGRectMake(CGRectGetWidth(middleView.frame)-60, 0, 60, 44))
+        
+        let tempPadding :CGFloat = 44*0.5-28*0.5
+        inputTextField.frame = CGRectMake(xPadding, 2*tempPadding, CGRectGetWidth(addTextView.frame)-2*xPadding, 28)
+        inputTextField.backgroundColor = UIColor.whiteColor()
+        addTextView.addSubview(inputTextField)
+        
+        inputTextField.becomeFirstResponder()
+        
+        
+        inputEmailField.frame = CGRectMake(xPadding, tempPadding+CGRectGetMaxY(inputTextField.frame), CGRectGetWidth(addTextView.frame)-2*xPadding, 28)
+        inputEmailField.backgroundColor = UIColor.whiteColor()
+        addTextView.addSubview(inputEmailField)
+        
+        inputWebsiteField.frame = CGRectMake(xPadding, tempPadding+CGRectGetMaxY(inputEmailField.frame), CGRectGetWidth(addTextView.frame)-2*xPadding, 28)
+        inputWebsiteField.backgroundColor = UIColor.whiteColor()
+        addTextView.addSubview(inputWebsiteField)
+        
+        
+        let tempBackButton = UIButton(frame: CGRectMake(xPadding, tempPadding+CGRectGetMaxY(inputWebsiteField.frame), CGRectGetWidth(addTextView.frame)-2*xPadding, 28))
         
         tempBackButton.setTitle("Cancel", forState: UIControlState.Normal)
         tempBackButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
@@ -581,22 +599,18 @@ class CreateNewViewController: UIViewController, UICollectionViewDelegate, UICol
         
         addTextView.addSubview(tempBackButton)
         
-        let tempPadding :CGFloat = 44*0.5-28*0.5
-        inputTextField.frame = CGRectMake(xPadding, 2*tempPadding, CGRectGetMinX(tempBackButton.frame)-xPadding, 28)
-        inputTextField.backgroundColor = UIColor.whiteColor()
-        addTextView.addSubview(inputTextField)
         
-        inputTextField.becomeFirstResponder()
+        let tempSaveButton = UIButton(frame: CGRectMake(xPadding, tempPadding+CGRectGetMaxY(tempBackButton.frame), CGRectGetWidth(addTextView.frame)-2*xPadding, 28))
         
+        tempSaveButton.setTitle("Save", forState: UIControlState.Normal)
+        tempSaveButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+        tempSaveButton.setTitleColor(UIColor.grayColor(), forState: UIControlState.Highlighted)
+        // tempBackButton.titleLabel!.font =  UIFont(name: "Lato-Bold", size: 15)
+        tempSaveButton.titleLabel!.font = UIFont.systemFontOfSize(14)
         
-        inputEmailField.frame = CGRectMake(xPadding, tempPadding+CGRectGetMaxY(inputTextField.frame), CGRectGetMinX(tempBackButton.frame)-xPadding, 28)
-        inputEmailField.backgroundColor = UIColor.whiteColor()
-        addTextView.addSubview(inputEmailField)
+        tempSaveButton.addTarget(self, action: "clickAppSearchCancelButton:", forControlEvents: UIControlEvents.TouchUpInside)
         
-        inputWebsiteField.frame = CGRectMake(xPadding, tempPadding+CGRectGetMaxY(inputEmailField.frame), CGRectGetMinX(tempBackButton.frame)-xPadding, 28)
-        inputWebsiteField.backgroundColor = UIColor.whiteColor()
-        addTextView.addSubview(inputWebsiteField)
-        
+        addTextView.addSubview(tempSaveButton)
         
         /*
         self.appSearchResults = AppSearchResultsView(frame: CGRectMake(0, 44, CGRectGetWidth(upView.frame), 0))
