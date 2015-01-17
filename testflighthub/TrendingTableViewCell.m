@@ -24,7 +24,7 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-
+        
     }
     return self;
 }
@@ -70,9 +70,9 @@
         self.nameLabel.textColor = [UIColor colorWithRed:51.0/255.0 green:54.0/255.0 blue:54.0/255.0 alpha:1.0];
         
         self.descriptionLabel = [[YQLabel alloc] init];
-        self.descriptionLabel.font = [UIFont fontWithName:@"Lato-Regular" size:15.0];
-        self.descriptionLabel.yqNumberOfLine = 2;
-        self.descriptionLabel.textColor = [UIColor blackColor];
+        self.descriptionLabel.font = [UIFont fontWithName:@"Lato-Regular" size:13.0];
+        self.descriptionLabel.yqNumberOfLine = 3;
+        self.descriptionLabel.textColor = [UIColor grayColor];
         
         self.taglineLabel = [[YQLabel alloc] init];
         self.taglineLabel.font = [UIFont fontWithName:@"Lato-Regular" size:15.0];
@@ -127,23 +127,16 @@
 
 - (void) setContentValue:(Product*)product object:(PFObject*)object
 {
-    if (product.isLoadingIconImage) {
-        self.iconImageView.file = [object objectForKey:@"iconImage"];
-        if (self.iconImageView.file) {
-            [self.iconImageView loadInBackground:^(UIImage *image, NSError *error) {
-                NSLog(@"successfully loading");
-            }];
-        }
-        else {
-            self.iconImageView.file = [object objectForKey:@"coverImage"];
-            [self.iconImageView loadInBackground:^(UIImage *image, NSError *error) {
-                NSLog(@"successfully loading");
-            }];
-        }
-        
+    if (self.iconImageView.file) {
+        [self.iconImageView loadInBackground:^(UIImage *image, NSError *error) {
+            NSLog(@"successfully loading");
+        }];
     }
     else {
-        self.iconImageView.image = product.iconImage;
+        self.iconImageView.file = [object objectForKey:@"coverImage"];
+        [self.iconImageView loadInBackground:^(UIImage *image, NSError *error) {
+            NSLog(@"successfully loading");
+        }];
     }
     
     self.nameLabel.text = [object objectForKey:@"name"];
@@ -187,7 +180,7 @@
     
     self.timeLabel.frame = CGRectMake(CGRectGetWidth(self.frame)-70, CGRectGetMinY(self.nameLabel.frame), 55, 30);
     
-    [self.descriptionLabel setFrame:CGRectMake(82.0f, 70.0f, CGRectGetWidth(self.frame)-100, 50) font:self.descriptionLabel.font text:self.descriptionLabel.text];
+    [self.descriptionLabel setFrame:CGRectMake(82.0f, 72.0f, CGRectGetWidth(self.frame)-100, 50) font:self.descriptionLabel.font text:self.descriptionLabel.text];
     
     [self.taglineLabel setFrame:CGRectMake(82.0f, CGRectGetMaxY(self.nameLabel.frame)+2, CGRectGetWidth(self.frame)-100, 50) font:self.taglineLabel.font text:self.taglineLabel.text];
     
@@ -200,7 +193,7 @@
 - (void)goToAppStore:(UIButton*)button
 {
     if (self.product.isOnAppStore) {
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Get the App" message:@"You are going to share your email to the creator of the beta testing app." delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Share", nil];
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Get the App" message:@"You are going to move to App Store." delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Continue", nil];
         [alertView show];
     }
     else {
@@ -212,11 +205,9 @@
 - (void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     switch (buttonIndex) {
-        case 1: {
-            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Thank you" message:@"You will receive the invitation to the app soon. Hope you enjoy the app." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-            [alertView show];
+        case 1:
+            [[UIApplication sharedApplication] openURL:self.product.website];
             break;
-        }
         default:
             break;
     }
@@ -365,7 +356,7 @@
 
 + (CGFloat)cellHeight
 {
-    return 160+5; // two lines... 150
+    return 170+6; // two lines... 150
     // three lines is 160+10
 }
 
