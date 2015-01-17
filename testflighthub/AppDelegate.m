@@ -29,12 +29,10 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    // Define color.
-    // [UIColor colorWithRed:41.0/255.0 green:45.0/255.0 blue:53.0/255.0 alpha:0.8]
-    // [UIColor colorWithRed:54.0/255.0 green:63.0/255.0 blue:69.0/255.0 alpha:1.0]
-    //
-    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:61.0/255.0 green:69.0/255.0 blue:75.0/255.0 alpha:1.0]];
-    [[UITabBar appearance] setTintColor:[UIColor colorWithRed:61.0/255.0 green:69.0/255.0 blue:75.0/255.0 alpha:1.0]];
+    // 455A64
+    // 607D8B
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorFromHexString:@"455A64"]];
+    [[UITabBar appearance] setTintColor:[UIColor colorFromHexString:@"455A64"]];
     // White or black
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
