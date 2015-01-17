@@ -31,8 +31,9 @@
     
     // 455A64
     // 607D8B
-    [[UINavigationBar appearance] setBarTintColor:[UIColor colorFromHexString:@"5e656d"]];
-    [[UITabBar appearance] setTintColor:[UIColor colorFromHexString:@"5e656d"]];
+    // UIColor(red: 41.0/255.0, green: 45.0/255.0, blue: 53.0/255.0, alpha: 0.8)
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:41.0/255.0 green:45.0/255.0 blue:53.0/255.0 alpha:0.8]];
+    [[UITabBar appearance] setTintColor:[UIColor colorWithRed:41.0/255.0 green:45.0/255.0 blue:53.0/255.0 alpha:0.8]];
     // White or black
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
@@ -40,7 +41,7 @@
     [[UINavigationBar appearance] setBarStyle:UIBarStyleBlack];
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     
-    [[UINavigationBar appearance] setTranslucent:NO];
+    [[UINavigationBar appearance] setTranslucent:YES];
     [[UINavigationBar appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys: [UIFont fontWithName:@"Lata-Regular" size:21.0], NSFontAttributeName, nil]];
     
     // Mixpanel

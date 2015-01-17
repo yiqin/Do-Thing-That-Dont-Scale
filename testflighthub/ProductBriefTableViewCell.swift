@@ -70,7 +70,7 @@ class ProductBriefTableViewCell: UITableViewCell {
     
     func setContentValue(product:Product){
         nameLabel.text = "Tagline".uppercaseString
-        taglineLable.text = product.review
+        taglineLable.text = product.tagline
         userLabel.text = product.postedByUsername
         
         if (product.isLoadingPostedByProfileImage){
@@ -90,7 +90,7 @@ class ProductBriefTableViewCell: UITableViewCell {
     class func cellHeight(product:Product)->CGFloat{
         
         let tempLabel = YQLabel()
-        tempLabel.setFrame(CGRectMake(xPadding, 0, screenWidth-2*xPadding, screenWidth), font: UIFont(name:"Lato-Regular", size: 15), text: product.review)
+        tempLabel.setFrame(CGRectMake(xPadding, 0, screenWidth-2*xPadding, screenWidth), font: UIFont(name:"Lato-Regular", size: 15), text: product.tagline)
         
         return CGRectGetHeight(tempLabel.frame)+40+2*yPadding+yPadding+40+yPadding+10;
     }
