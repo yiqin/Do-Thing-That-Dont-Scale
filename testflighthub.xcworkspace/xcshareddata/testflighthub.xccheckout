@@ -10,14 +10,14 @@
 	<string>testflighthub</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>46C2E887091D2175D45557D21347D20EE986A644</key>
+		<key>E98DE8143CE454EEBCF3C3313C30BB8F08234ADF</key>
 		<string>https://github.com/yiqin/testflighthub.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>testflighthub.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>46C2E887091D2175D45557D21347D20EE986A644</key>
+		<key>E98DE8143CE454EEBCF3C3313C30BB8F08234ADF</key>
 		<string>..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
@@ -25,14 +25,14 @@
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>46C2E887091D2175D45557D21347D20EE986A644</string>
+	<string>E98DE8143CE454EEBCF3C3313C30BB8F08234ADF</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>46C2E887091D2175D45557D21347D20EE986A644</string>
+			<string>E98DE8143CE454EEBCF3C3313C30BB8F08234ADF</string>
 			<key>IDESourceControlWCCName</key>
 			<string>testflighthub</string>
 		</dict>
