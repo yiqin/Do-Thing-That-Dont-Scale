@@ -1,0 +1,14 @@
+{
+    "applications": {
+        "Do Thing that Don't Scale": {
+            "applicationId": "Bgt4AQ7b9W1HvS06DArUO2oc4yLZP7oiEMB2p2y2", 
+            "masterKey": "LWLFuEE1Et1uFyLyk4gJUhqoPV0uBDfJ0EcjoK5F"
+        }, 
+        "_default": {
+            "link": "Do Thing that Don't Scale"
+        }
+    }, 
+    "global": {
+        "parseVersion": "1.3.3"
+    }
+}
