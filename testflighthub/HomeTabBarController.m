@@ -133,36 +133,6 @@
         [self.button4 addTarget:self action:@selector(tabBarButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
         [self.tabBarUIView addSubview:self.button4];
     }
-    else if (buttonNumber == 3){
-        // Button0
-        self.button0 = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, buttonWidth, 45)];
-        self.button0.autoresizingMask = buttonAutoresizingMask;
-        [self.button0 setTitle:@"0" forState:UIControlStateNormal];
-        [self.button0 setTag:0];
-        [self.button0 setSelected:true];
-        [self.button0 addTarget:self action:@selector(tabBarButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
-        [self.tabBarUIView addSubview:self.button0];
-        
-        // Button2
-        self.button2 = [[UIButton alloc] initWithFrame:CGRectMake(buttonWidth, 0, buttonWidth, 45)];
-        self.button2.autoresizingMask = buttonAutoresizingMask;
-        [self.button2 setTitle:@"2" forState:UIControlStateNormal];
-        [self.button2 setTag:2];
-        [self.button2 setSelected:false];
-        [self.button2 addTarget:self action:@selector(tabBarButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
-        [self.tabBarUIView addSubview:self.button2];
-        
-        // Button4
-        self.button4 = [[UIButton alloc] initWithFrame:CGRectMake(2*buttonWidth, 0, buttonWidth, 45)];
-        self.button4.autoresizingMask = buttonAutoresizingMask;
-        [self.button4 setTitle:@"4" forState:UIControlStateNormal];
-        [self.button4 setTag:4];
-        [self.button4 setSelected:false];
-        [self.button4 addTarget:self action:@selector(tabBarButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
-        [self.tabBarUIView addSubview:self.button4];
-    }
-    
-
 }
 
 - (void)tabBarButtonClicked:(id)sender
