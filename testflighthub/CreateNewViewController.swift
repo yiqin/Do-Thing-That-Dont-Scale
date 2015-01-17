@@ -599,6 +599,7 @@ class CreateNewViewController: UIViewController, UICollectionViewDelegate, UICol
         
         addTextView.addSubview(tempBackButton)
         
+
         
         let tempSaveButton = UIButton(frame: CGRectMake(xPadding, tempPadding+CGRectGetMaxY(tempBackButton.frame), CGRectGetWidth(addTextView.frame)-2*xPadding, 28))
         
@@ -607,8 +608,6 @@ class CreateNewViewController: UIViewController, UICollectionViewDelegate, UICol
         tempSaveButton.setTitleColor(UIColor.grayColor(), forState: UIControlState.Highlighted)
         // tempBackButton.titleLabel!.font =  UIFont(name: "Lato-Bold", size: 15)
         tempSaveButton.titleLabel!.font = UIFont.systemFontOfSize(14)
-        
-        tempSaveButton.addTarget(self, action: "clickAppSearchCancelButton:", forControlEvents: UIControlEvents.TouchUpInside)
         
         addTextView.addSubview(tempSaveButton)
         
