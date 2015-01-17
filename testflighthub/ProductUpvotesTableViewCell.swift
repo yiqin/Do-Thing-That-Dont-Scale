@@ -51,7 +51,7 @@ class ProductUpvoteTableViewCell: UITableViewCell {
     
     class func cellHeight(product:Product)->CGFloat{
         
-        return 111+5;
+        return 111+5-10-5;
     }
     
 

@@ -254,7 +254,7 @@
 
 -(void)hideTabBarUIView
 {
-    self.tabBarUIView.hidden = YES;
+    // self.tabBarUIView.hidden = YES;
 }
 
 -(void)showTabBarUIView
