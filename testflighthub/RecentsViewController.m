@@ -13,7 +13,6 @@
 
 @interface RecentsViewController ()
 @property (nonatomic, assign) BOOL shouldReloadOnAppear;
-@property (nonatomic, strong) CircleNavigationControllerDelegate *circleNavigationControllerDelegate;
 
 @property (nonatomic, strong) NSMutableArray *products;     // parse data to product
 @property (nonatomic, strong) NSMutableArray *objects;      // original data from parse
@@ -35,9 +34,7 @@
         
         // Notification
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showCreateNew) name:@"showCreateNewFromRecents11" object:nil];
-        
-        self.circleNavigationControllerDelegate = [[CircleNavigationControllerDelegate alloc] init];
-        
+                
         self.products = [[NSMutableArray alloc] init];
         self.objects = [[NSMutableArray alloc] init];
         

@@ -98,8 +98,6 @@
 		8D5EFF591A416AB6004DF952 /* RecentsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D5EFF581A416AB6004DF952 /* RecentsTableViewCell.m */; };
 		8D5EFFB01A4185C1004DF952 /* HomeTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D5EFFAF1A4185C1004DF952 /* HomeTabBarController.m */; };
 		8D66C2BA1A5FC1E500677BDE /* PostAuthorizeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D66C2B91A5FC1E500677BDE /* PostAuthorizeManager.m */; };
-		8D67932A1A433FEE00D9D8D8 /* CircleNavigationControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6793281A433FEE00D9D8D8 /* CircleNavigationControllerDelegate.swift */; };
-		8D67932B1A433FEE00D9D8D8 /* CircleTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6793291A433FEE00D9D8D8 /* CircleTransitionAnimator.swift */; };
 		8D6793381A43B52000D9D8D8 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8D67932D1A43B52000D9D8D8 /* LICENSE.txt */; };
 		8D6793391A43B52000D9D8D8 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8D67932E1A43B52000D9D8D8 /* OpenSans-Bold.ttf */; };
 		8D67933A1A43B52000D9D8D8 /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8D67932F1A43B52000D9D8D8 /* OpenSans-BoldItalic.ttf */; };
@@ -313,8 +311,6 @@
 		8D5EFFAF1A4185C1004DF952 /* HomeTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTabBarController.m; sourceTree = "<group>"; };
 		8D66C2B81A5FC1E500677BDE /* PostAuthorizeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostAuthorizeManager.h; sourceTree = "<group>"; };
 		8D66C2B91A5FC1E500677BDE /* PostAuthorizeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostAuthorizeManager.m; sourceTree = "<group>"; };
-		8D6793281A433FEE00D9D8D8 /* CircleNavigationControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleNavigationControllerDelegate.swift; sourceTree = "<group>"; };
-		8D6793291A433FEE00D9D8D8 /* CircleTransitionAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleTransitionAnimator.swift; sourceTree = "<group>"; };
 		8D67932D1A43B52000D9D8D8 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		8D67932E1A43B52000D9D8D8 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
 		8D67932F1A43B52000D9D8D8 /* OpenSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-BoldItalic.ttf"; sourceTree = "<group>"; };
@@ -550,15 +546,6 @@
 			path = AppSearchEngine;
 			sourceTree = SOURCE_ROOT;
 		};
-		8D5C54D91A4F639500CE41F5 /* CircleTransitionAnimator */ = {
-			isa = PBXGroup;
-			children = (
-				8D6793291A433FEE00D9D8D8 /* CircleTransitionAnimator.swift */,
-				8D6793281A433FEE00D9D8D8 /* CircleNavigationControllerDelegate.swift */,
-			);
-			name = CircleTransitionAnimator;
-			sourceTree = "<group>";
-		};
 		8D5C54DC1A4F712700CE41F5 /* NoNeedNow */ = {
 			isa = PBXGroup;
 			children = (
@@ -621,7 +608,6 @@
 				8D6DE6211A450AF500AA94BD /* NotificationTableView */,
 				8D6DE61A1A45045A00AA94BD /* ProfileViewController */,
 				8D6793431A43D9E000D9D8D8 /* CreateNewViewController */,
-				8D5C54D91A4F639500CE41F5 /* CircleTransitionAnimator */,
 				8D5EFF5A1A416B3A004DF952 /* RecentsTableView */,
 				8D5EFF531A415D08004DF952 /* TrendingTableView */,
 				8D6DE6221A45243900AA94BD /* YQUIKit */,
@@ -1105,7 +1091,6 @@
 				8D5C54C71A4F1CD000CE41F5 /* YQURLConnectionOperation.m in Sources */,
 				8D5EB1A41A4B361A00E2534B /* ProductWebsiteViewController.m in Sources */,
 				8D5EFF591A416AB6004DF952 /* RecentsTableViewCell.m in Sources */,
-				8D67932B1A433FEE00D9D8D8 /* CircleTransitionAnimator.swift in Sources */,
 				8D4AB0911A4F8D280095FCCC /* AppSearchResultsView.m in Sources */,
 				8D7475931A586F270064DFC0 /* ProfileSelectionTableViewCell.swift in Sources */,
 				8D4AB0931A4FDDE10095FCCC /* LikesDataManager.swift in Sources */,
@@ -1124,7 +1109,6 @@
 				8D00C77D1A42C83E0050C0E0 /* CreateNewViewController.swift in Sources */,
 				8D1E4D681A46949B0035381B /* ProductCommentTableViewCell.swift in Sources */,
 				8D5EFFB01A4185C1004DF952 /* HomeTabBarController.m in Sources */,
-				8D67932A1A433FEE00D9D8D8 /* CircleNavigationControllerDelegate.swift in Sources */,
 				8D6DE6261A4534BA00AA94BD /* NSTestObject.swift in Sources */,
 				8D7475951A5871810064DFC0 /* YourRecommendationsTableViewController.swift in Sources */,
 				8D5C54D81A4F5B7A00CE41F5 /* AppSearchEngine.m in Sources */,

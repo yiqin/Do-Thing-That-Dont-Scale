@@ -60,16 +60,10 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <outlet property="delegate" destination="8b4-Ih-imi" id="xR8-js-jCD"/>
                         <segue destination="idW-Ca-uom" kind="relationship" relationship="rootViewController" id="Su5-hv-PSi"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mT4-Sj-bJv" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="8b4-Ih-imi" customClass="CircleNavigationControllerDelegate" customModule="testflighthub" customModuleProvider="target">
-                    <connections>
-                        <outlet property="navigationController" destination="FfE-uu-WOg" id="ff5-uq-5tN"/>
-                    </connections>
-                </customObject>
             </objects>
             <point key="canvasLocation" x="-744" y="2036"/>
         </scene>
@@ -87,12 +81,10 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </toolbar>
                     <connections>
-                        <outlet property="delegate" destination="6so-2Q-TY5" id="aOR-Zl-NuA"/>
                         <segue destination="bEy-fp-3d0" kind="relationship" relationship="rootViewController" id="r8P-sI-a7K"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S6Y-Hg-RME" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="6so-2Q-TY5" customClass="CircleNavigationControllerDelegate" customModule="testflighthub" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="-744" y="1255"/>
         </scene>
@@ -295,16 +287,10 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </toolbar>
                     <connections>
-                        <outlet property="delegate" destination="4EL-IL-jNh" id="Adj-Lv-Dam"/>
                         <segue destination="wz9-xg-GrK" kind="relationship" relationship="rootViewController" id="Jra-HC-tpR"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j7q-uh-rsR" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="4EL-IL-jNh" customClass="CircleNavigationControllerDelegate" customModule="testflighthub" customModuleProvider="target">
-                    <connections>
-                        <outlet property="navigationController" destination="vOs-aB-eK2" id="tF4-nM-sxo"/>
-                    </connections>
-                </customObject>
             </objects>
             <point key="canvasLocation" x="-750" y="-198"/>
         </scene>
@@ -366,6 +352,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="i8K-cs-upE"/>
+        <segue reference="i2g-CW-h9U"/>
     </inferredMetricsTieBreakers>
 </document>
