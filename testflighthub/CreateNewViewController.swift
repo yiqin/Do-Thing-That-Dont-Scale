@@ -31,9 +31,12 @@ class CreateNewViewController: UIViewController, UICollectionViewDelegate, UICol
     
     // Dyanmic view
     var beginningLabel = UILabel()
+    
     var addTextView = UIView()
     
     var inputTextField = UITextField()
+    var inputEmailField = UITextField()
+    var inputWebsiteField = UITextField()
     
     var taglineTextView = UITextView()
     var taglineSaveButton = UIButton()
@@ -167,7 +170,7 @@ class CreateNewViewController: UIViewController, UICollectionViewDelegate, UICol
         
         
         
-        inputTextField.placeholder = "Enter App Name..."
+        inputTextField.placeholder = "App Name..."
         // inputTextField.textAlignment = NSTextAlignment.Center
         // inputTextField.font = UIFont(name: "Lato-Regular", size: 15)
         inputTextField.font = UIFont.systemFontOfSize(14)
@@ -177,6 +180,25 @@ class CreateNewViewController: UIViewController, UICollectionViewDelegate, UICol
         inputTextField.returnKeyType = UIReturnKeyType.Next
         
         // inputTextField.addTarget(self, action: "myTextFieldDidChange:", forControlEvents: UIControlEvents.EditingChanged)
+        
+        inputEmailField.placeholder = "Your Email..."
+        inputEmailField.font = UIFont.systemFontOfSize(14)
+        inputEmailField.borderStyle = UITextBorderStyle.RoundedRect
+        inputEmailField.tag = 1
+        inputEmailField.delegate = self
+        inputEmailField.returnKeyType = UIReturnKeyType.Next
+        
+        inputWebsiteField.placeholder = "Relate Website..."
+        inputWebsiteField.font = UIFont.systemFontOfSize(14)
+        inputWebsiteField.borderStyle = UITextBorderStyle.RoundedRect
+        inputWebsiteField.tag = 2
+        inputWebsiteField.delegate = self
+        inputWebsiteField.returnKeyType = UIReturnKeyType.Done
+        
+        
+
+        
+        
         
         
         taglineTextView.layer.borderColor = UIColor.grayColor().colorWithAlphaComponent(0.5).CGColor
@@ -543,7 +565,7 @@ class CreateNewViewController: UIViewController, UICollectionViewDelegate, UICol
     // add text
     //*********************
     func addText(){
-        addTextView.frame = CGRectMake(0, 0, CGRectGetWidth(upView.frame), 44)
+        addTextView.frame = CGRectMake(0, 0, CGRectGetWidth(upView.frame), 44*5)
         addTextView.backgroundColor = UIColor(red: 41.0/255.0, green: 45.0/255.0, blue: 53.0/255.0, alpha: 0.8)
         upView.addSubview(addTextView)
         
@@ -559,17 +581,28 @@ class CreateNewViewController: UIViewController, UICollectionViewDelegate, UICol
         
         addTextView.addSubview(tempBackButton)
         
-        
-        inputTextField.frame = CGRectMake(xPadding, CGRectGetHeight(addTextView.frame)*0.5-28*0.5, CGRectGetMinX(tempBackButton.frame)-xPadding, 28)
+        let tempPadding :CGFloat = 44*0.5-28*0.5
+        inputTextField.frame = CGRectMake(xPadding, 2*tempPadding, CGRectGetMinX(tempBackButton.frame)-xPadding, 28)
         inputTextField.backgroundColor = UIColor.whiteColor()
         addTextView.addSubview(inputTextField)
         
         inputTextField.becomeFirstResponder()
         
         
+        inputEmailField.frame = CGRectMake(xPadding, tempPadding+CGRectGetMaxY(inputTextField.frame), CGRectGetMinX(tempBackButton.frame)-xPadding, 28)
+        inputEmailField.backgroundColor = UIColor.whiteColor()
+        addTextView.addSubview(inputEmailField)
+        
+        inputWebsiteField.frame = CGRectMake(xPadding, tempPadding+CGRectGetMaxY(inputEmailField.frame), CGRectGetMinX(tempBackButton.frame)-xPadding, 28)
+        inputWebsiteField.backgroundColor = UIColor.whiteColor()
+        addTextView.addSubview(inputWebsiteField)
+        
+        
+        /*
         self.appSearchResults = AppSearchResultsView(frame: CGRectMake(0, 44, CGRectGetWidth(upView.frame), 0))
         self.appSearchResults.delegate = self
         view.addSubview(appSearchResults)
+        */
     }
     
     func changeSearchResultsViewSizeWithNewHeight(newHeight: CGFloat) {
@@ -595,9 +628,15 @@ class CreateNewViewController: UIViewController, UICollectionViewDelegate, UICol
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         if(textField.tag == 0){
             // self.appSearchResults.updateEnteredAppName(inputTextField.text)
-            CreatingNewProductDataManager.sharedInstance.finishName(inputTextField.text, appURL: "yiqin.info")
+            inputEmailField.becomeFirstResponder()
+        }
+        else if (textField.tag == 1){
+            inputWebsiteField.becomeFirstResponder()
+        }
+        else if (textField.tag == 2){
+            CreatingNewProductDataManager.sharedInstance.finishName(inputTextField.text, appURL: inputWebsiteField.text)
             updateViewAfterFinishName()
-            inputTextField.resignFirstResponder()
+            inputWebsiteField.resignFirstResponder()
         }
         return true
     }
@@ -612,6 +651,9 @@ class CreateNewViewController: UIViewController, UICollectionViewDelegate, UICol
     
     func updateViewAfterFinishName(){
         beginningLabel.hidden = true
+        
+        addTextView.removeFromSuperview()
+
         
         iconImageView.removeFromSuperview()
         appNameLabel.removeFromSuperview()
@@ -635,7 +677,7 @@ class CreateNewViewController: UIViewController, UICollectionViewDelegate, UICol
         authorLabel.text = "Created by \(app.artistName)"
         authorLabel.font = UIFont.systemFontOfSize(13)
         authorLabel.textColor = UIColor.grayColor()
-        view.addSubview(authorLabel)
+        // view.addSubview(authorLabel)
         
         appDescriptionLabel = YQLabel()
         appDescriptionLabel.yqNumberOfLine = 3
