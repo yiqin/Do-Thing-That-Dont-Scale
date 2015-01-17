@@ -174,7 +174,7 @@ class CreateNewViewController: UIViewController, UICollectionViewDelegate, UICol
         inputTextField.borderStyle = UITextBorderStyle.RoundedRect
         inputTextField.tag = 0
         inputTextField.delegate = self
-        inputTextField.returnKeyType = UIReturnKeyType.Search
+        inputTextField.returnKeyType = UIReturnKeyType.Next
         
         // inputTextField.addTarget(self, action: "myTextFieldDidChange:", forControlEvents: UIControlEvents.EditingChanged)
         
@@ -437,6 +437,7 @@ class CreateNewViewController: UIViewController, UICollectionViewDelegate, UICol
         })
     }
     
+    // No available now.
     func addTextAboutProduct(){
         let temp = AddTextViewController(nibName: "AddTextViewController", bundle: nil)
         temp.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
@@ -593,7 +594,10 @@ class CreateNewViewController: UIViewController, UICollectionViewDelegate, UICol
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         if(textField.tag == 0){
-            self.appSearchResults.updateEnteredAppName(inputTextField.text)
+            // self.appSearchResults.updateEnteredAppName(inputTextField.text)
+            CreatingNewProductDataManager.sharedInstance.finishName(inputTextField.text, appURL: "yiqin.info")
+            updateViewAfterFinishName()
+            inputTextField.resignFirstResponder()
         }
         return true
     }

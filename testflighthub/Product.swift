@@ -41,26 +41,19 @@ class Product: NSTestObject {
     override init(parseObject:PFObject) {
         name = parseObject["name"] as String
         
-        let tempCharacter = " - "
-        if name.rangeOfString(tempCharacter) != nil {
-            let tempNameArray = name.componentsSeparatedByString(tempCharacter)
-            if (tempNameArray.count > 0){
-                shortName = tempNameArray[0]
-            }
-            else {
-                shortName = name
-            }
-        }
-        else {
-            shortName = name
-        }
+        shortName = name
         
-        tagline = ""
-        // tagline = parseObject["tagline"] as String
+        tagline = parseObject["tagline"] as String
         
+        // how to avoid this......
+        /*
         hashtags = parseObject["hashtags"] as String
         appDescription = parseObject["appDescription"] as String
         review = parseObject["review"] as String
+        */
+        appDescription = ""
+        review = ""
+        hashtags = ""
         
         let rawWebsiteString = parseObject["website"] as String
         let websiteString = rawWebsiteString.stringByReplacingOccurrencesOfString(" ", withString: "")

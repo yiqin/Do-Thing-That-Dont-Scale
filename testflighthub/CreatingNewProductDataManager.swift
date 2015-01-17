@@ -15,6 +15,8 @@ class CreatingNewProductDataManager: NSObject {
     var hashtags = ""
     var review = ""
     
+    var tagline = ""
+    
     var selectedApp = App()
     
     var screenshots : NSMutableArray = []
@@ -47,7 +49,7 @@ class CreatingNewProductDataManager: NSObject {
     }
     
     func finishHashtags(hashtags:NSString){
-        self.hashtags = hashtags
+        self.tagline = hashtags //  This is tagline
         
         isSecondStepFinished = true
         TestMixpanel.createHashtagSuccessfully()
@@ -101,7 +103,7 @@ class CreatingNewProductDataManager: NSObject {
         
         appName = ""
         appURL = ""
-        hashtags = ""
+        tagline = ""
         
         selectedApp = App()
         
@@ -147,23 +149,25 @@ class CreatingNewProductDataManager: NSObject {
     func saveProductToParse(){
         
         var product = PFObject(className:"Product")
-        product["appID"] = selectedApp.trackId
-        product["name"] = selectedApp.trackName
-        product["website"] = selectedApp.trackViewUrl
-        product["hashtags"] = hashtags
-        product["review"] = review
-        product["appDescription"] = selectedApp.appDescription
+        // product["appID"] = selectedApp.trackId
+        product["name"] = appName
+        product["website"] = appURL
+        // product["hashtags"] = hashtags
+        // product["review"] = review
+        // product["appDescription"] = selectedApp.appDescription
         
-        product["tagline"] = ""
+        product["tagline"] = tagline
         
         let tempCoverImage = screenshots.firstObject as UIImage
         let tempCoverImageData = UIImagePNGRepresentation(tempCoverImage)
         product["coverImage"] = PFFile(name: "coverImage.png", data: tempCoverImageData)
         
+        /*
         let tempIconImage = selectedApp.artwork100
         let tempIconImageData = UIImagePNGRepresentation(tempIconImage)
         product["iconImage"] = PFFile(name: "iconImage.png", data: tempIconImageData)
-        
+        */
+
         product["upvoteCount"] = 0
         product["upvoteToday"] = 0
         product["scorePrevious"] = ConfigDataManager.sharedInstance.scoreAtPrevious
