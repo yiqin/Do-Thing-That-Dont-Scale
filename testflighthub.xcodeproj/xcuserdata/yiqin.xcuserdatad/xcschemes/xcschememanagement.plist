@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>DoThings.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>18</integer>
+		</dict>
 		<key>testflighthub.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -14,6 +19,11 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>8D19DE071A6BF30200163A61</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>8D5EFED41A40A5D8004DF952</key>
 		<dict>
 			<key>primary</key>
