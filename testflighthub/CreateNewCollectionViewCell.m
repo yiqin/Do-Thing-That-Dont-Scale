@@ -7,6 +7,7 @@
 //
 
 #import "CreateNewCollectionViewCell.h"
+#import <Colours.h>
 
 @implementation CreateNewCollectionViewCell
 
@@ -17,6 +18,9 @@
     self.typeLabel.textAlignment = NSTextAlignmentCenter;
     [self addSubview:self.typeLabel];
     
+    self.iconImageView = [[UIImageView alloc] init];
+    self.iconImageView.contentMode = UIViewContentModeScaleAspectFit;
+    [self addSubview:self.iconImageView];
     // self.finishImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"recent_selected"]];
     
     NSLog(@"awake from nib");
@@ -29,6 +33,8 @@
     
     self.typeLabel.frame = CGRectMake(0, CGRectGetWidth(self.frame), CGRectGetWidth(self.frame), 30);
     // self.finishImageView.frame = CGRectMake(CGRectGetWidth(self.frame)-45, CGRectGetHeight(self.frame)-45, 40, 40);
+    CGFloat iconSize = 30;
+    self.iconImageView.frame = CGRectMake(0.5*(self.frame.size.width-iconSize), 0.5*(self.frame.size.height-iconSize), iconSize, iconSize);
 }
 
 - (void)addFinishIndicator
@@ -37,6 +43,7 @@
     NSMutableAttributedString *attString=[[NSMutableAttributedString alloc]initWithString:self.typeLabel.text];
     [attString addAttribute:NSStrikethroughStyleAttributeName value:[NSNumber numberWithInt:1] range:NSMakeRange(0,[attString length])];
     self.typeLabel.attributedText = attString;
+    self.backgroundColor = [UIColor colorFromHexString:@"D9D9D9"];
 }
 
 @end

@@ -14,7 +14,7 @@ class CreateNewViewController: UIViewController, UICollectionViewDelegate, UICol
     
     var typeCollectionView = UICollectionView(frame: CGRectMake(0, 0, 100, 100), collectionViewLayout:UICollectionViewFlowLayout())     // this is a hard problem.....
     let typeNames = ["Name", "Tagline", "Screenshots"]
-    let typeIcons = []
+    let typeIcons = [UIImage(named: "createText"),UIImage(named: "createTagline"), UIImage(named: "createScreenshots")]
     
     var bottomView = UIView()
     var middleView = UIView()
@@ -384,6 +384,7 @@ class CreateNewViewController: UIViewController, UICollectionViewDelegate, UICol
         cell.backgroundColor = UIColor(fromHexString: "#F5F5F5")
         
         cell.typeLabel.text = typeNames[indexPath.row]
+        cell.iconImageView.image = typeIcons[indexPath.row]
         
         var tempIsFinished = false
         if (indexPath.row == 0){
@@ -705,7 +706,7 @@ class CreateNewViewController: UIViewController, UICollectionViewDelegate, UICol
     }
     
     func updateViewAfterFinishName(){
-        beginningLabel.hidden = true
+        // beginningLabel.hidden = true
         
         addTextView.removeFromSuperview()
 

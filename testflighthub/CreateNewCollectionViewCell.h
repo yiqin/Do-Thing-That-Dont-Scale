@@ -14,6 +14,7 @@
 
 @property(nonatomic) BOOL isFinished;
 // @property(nonatomic, strong) UIImageView *finishImageView;
+@property(nonatomic, strong) UIImageView *iconImageView;
 
 - (void)addFinishIndicator;
 
