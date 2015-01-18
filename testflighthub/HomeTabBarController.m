@@ -259,7 +259,7 @@
 
 -(void)showTabBarUIView
 {
-    self.tabBarUIView.hidden = NO;
+    // self.tabBarUIView.hidden = NO;
 }
 
 -(void)hideTabBarUIViewTwo

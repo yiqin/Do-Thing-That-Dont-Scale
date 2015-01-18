@@ -71,6 +71,8 @@
     
     self.navigationController.tabBarController.tabBar.hidden = YES;
     
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"showTabBarUIViewTwo" object:nil];
+    
     //
     // self.navigationController.delegate = self.circleNavigationControllerDelegate;
     

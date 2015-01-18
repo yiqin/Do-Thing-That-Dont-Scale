@@ -50,8 +50,11 @@ class ProductDetailViewController: UIViewController {
     func moveToWebsite() {
         
         var webViewController = ProductWebsiteViewController(URL: product.website)
+        
+        
+        
         navigationController?.pushViewController(webViewController, animated: true)
-    
+        NSNotificationCenter.defaultCenter().postNotificationName("hideTabBarUIViewTwo", object: nil)
     }
     
     required init(coder aDecoder: NSCoder) {
@@ -81,7 +84,7 @@ class ProductDetailViewController: UIViewController {
     // ##############################
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
-        NSNotificationCenter.defaultCenter().postNotificationName("showTabBarUIViewTwo", object: nil)
+        // NSNotificationCenter.defaultCenter().postNotificationName("showTabBarUIViewTwo", object: nil)
     }
     
     override func prefersStatusBarHidden() -> Bool {

@@ -22,7 +22,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"hideTabBarUIViewTwo" object:nil];
+    // [[NSNotificationCenter defaultCenter] postNotificationName:@"hideTabBarUIViewTwo" object:nil];
 }
 
 
