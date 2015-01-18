@@ -413,7 +413,7 @@ class CreateNewViewController: UIViewController, UICollectionViewDelegate, UICol
         if(indexPath.row == 0){
             // Old version
             // addTextAboutProduct()
-            addText()
+            addTextVersion2()
             TestMixpanel.pressCreateName()
         }
         else if(indexPath.row == 1) {
@@ -559,6 +559,48 @@ class CreateNewViewController: UIViewController, UICollectionViewDelegate, UICol
     
     func qb_imagePickerControllerDidCancel(imagePickerController: QBImagePickerController!) {
         dismissImagePickerController()
+    }
+    
+    func addTextVersion2(){
+        
+        let alertController = UIAlertController(title: "Name of Beta Testing App", message: nil, preferredStyle: .Alert)
+        
+        alertController.addTextFieldWithConfigurationHandler { (textField) in
+            textField.placeholder = "Name"
+            
+        }
+        
+        alertController.addTextFieldWithConfigurationHandler { (textField) in
+            textField.placeholder = "Website"
+            // textField.keyboardType = .EmailAddress
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in
+            println(action)
+            
+            
+        }
+        alertController.addAction(cancelAction)
+        
+        let okAction = UIAlertAction(title: "Enter", style: .Default) { (action) in
+            println(action)
+            let textField = alertController.textFields
+            
+            let nameTextField = alertController.textFields![0] as UITextField
+            let websiteTextField = alertController.textFields![1] as UITextField
+            
+            CreatingNewProductDataManager.sharedInstance.finishName(nameTextField.text, appURL: websiteTextField.text)
+            self.updateViewAfterFinishName()
+            
+        }
+        alertController.addAction(okAction)
+
+        
+        self.presentViewController(alertController, animated: true) {
+            
+            
+        }
+        
     }
     
     //*********************
