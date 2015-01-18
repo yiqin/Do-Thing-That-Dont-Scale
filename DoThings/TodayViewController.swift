@@ -12,6 +12,12 @@ import Parse
 
 class TodayViewController: UIViewController, NCWidgetProviding {
         
+    @IBOutlet weak var name: UILabel!
+    
+    @IBOutlet weak var tagline: UILabel!
+        
+    @IBOutlet weak var iconImageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view from its nib.
@@ -20,15 +26,41 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     }
     
     func loadDataFromParse(){
-        Parse.setApplicationId("2D6T3tgwBIPoE8HkuninwT3gsUkrHouCfzg0MzDL", clientKey: "cmvDVWTEIrZO4phyuddppS96diUqckCKazxBEwxH")
+        Parse.setApplicationId("E7StxK5eRXAok9R4Ohen8TjNxspF7N97ogokzsSa", clientKey: "yFGfgZcREb2bFc03jkOCpgDEof5WDCeLI4stOMM3")
         
         let query = PFQuery(className: "TodayProduct")
+        /*
         query.orderByDescending("createdAt")
         query.findObjectsInBackgroundWithBlock { (objects:[AnyObject]!, error:NSError!) -> Void in
             
             println("when you see this .... it means you have data from Parse.com. ")
             
             
+        }
+        */
+        
+        query.getFirstObjectInBackgroundWithBlock { (object:PFObject!, error:NSError!) -> Void in
+            if ((error) != nil){
+                
+            }
+            else {
+                if let tempName = object["name"] as? String {
+                    self.name.text = tempName
+                }
+                
+                if let tempTagline = object["tagline"] as? String {
+                    self.tagline.text = tempTagline
+                }
+                
+                let tempImageFile = object["iconImage"] as PFFile
+                tempImageFile.getDataInBackgroundWithBlock {
+                    (imageData: NSData!, error: NSError!) -> Void in
+                    if error == nil {
+                        self.iconImageView.image = UIImage(data:imageData)
+                    }
+                }
+                
+            }
         }
         
     }
