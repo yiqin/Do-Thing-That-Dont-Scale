@@ -44,6 +44,8 @@ class TodayViewController: UIViewController, NCWidgetProviding {
                 
             }
             else {
+                println("when you see this .... it means you have data from Parse.com. ")
+                
                 if let tempName = object["name"] as? String {
                     self.name.text = tempName
                 }
@@ -56,6 +58,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
                 tempImageFile.getDataInBackgroundWithBlock {
                     (imageData: NSData!, error: NSError!) -> Void in
                     if error == nil {
+                        self.iconImageView.contentMode = UIViewContentMode.ScaleAspectFit
                         self.iconImageView.image = UIImage(data:imageData)
                     }
                 }
