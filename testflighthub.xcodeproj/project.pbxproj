@@ -530,12 +530,13 @@
 			path = YQNetworking;
 			sourceTree = "<group>";
 		};
-		8D5C54D51A4F5B0B00CE41F5 /* AppSearchEngine */ = {
+		8D5C54D51A4F5B0B00CE41F5 /* AppSearchEngine-No Use */ = {
 			isa = PBXGroup;
 			children = (
 				8D5C54D61A4F5B7A00CE41F5 /* AppSearchEngine.h */,
 				8D5C54D71A4F5B7A00CE41F5 /* AppSearchEngine.m */,
 			);
+			name = "AppSearchEngine-No Use";
 			path = AppSearchEngine;
 			sourceTree = SOURCE_ROOT;
 		};
@@ -593,7 +594,7 @@
 				8D5EFEDC1A40A5D8004DF952 /* AppDelegate.h */,
 				8D5EFEDD1A40A5D8004DF952 /* AppDelegate.m */,
 				8DDFEA771A65DF0700421711 /* Analytics */,
-				8D5C54D51A4F5B0B00CE41F5 /* AppSearchEngine */,
+				8D5C54D51A4F5B0B00CE41F5 /* AppSearchEngine-No Use */,
 				8D42BE3A1A48E84100DDE854 /* TestUIKit */,
 				8D6DE62B1A45395E00AA94BD /* DataClass */,
 				8D6DE62C1A45396C00AA94BD /* DataManager */,
