@@ -37,9 +37,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RBZ-MM-yhB">
-                                <rect key="frame" x="16" y="93" width="150" height="150"/>
+                                <rect key="frame" x="16" y="93" width="150" height="266"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="GvW-uM-f5f"/>
+                                    <constraint firstAttribute="height" constant="266" id="GvW-uM-f5f"/>
                                     <constraint firstAttribute="width" constant="150" id="WRJ-IO-MKS"/>
                                 </constraints>
                             </imageView>
