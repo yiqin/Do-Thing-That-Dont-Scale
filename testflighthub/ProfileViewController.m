@@ -20,9 +20,6 @@
 @property (strong, nonatomic) UIImageView *userPhoto;
 
 @property (strong, nonatomic) UILabel *usernameLabel;
-@property (strong, nonatomic) UILabel *createYourFavoriteLabel;
-
-@property (strong, nonatomic) UIImageView *arrowPhoto;
 
 @property (strong, nonatomic) UIButton *accountButton;
 
@@ -89,13 +86,6 @@
     self.usernameLabel.textColor = [UIColor whiteColor];
     [self.view addSubview: self.usernameLabel];
     
-    
-    self.createYourFavoriteLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 30)];
-    self.createYourFavoriteLabel.text = @"Post your beta testing app!";
-    self.createYourFavoriteLabel.textAlignment = NSTextAlignmentCenter;
-    [self.view addSubview: self.createYourFavoriteLabel];
-    
-    
     self.accountButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
     [self.accountButton addTarget:self action:@selector(tapAccountButton:) forControlEvents:UIControlEventTouchUpInside];
     
@@ -115,9 +105,6 @@
     */
     
     [self.navigationController setNavigationBarHidden:YES animated:NO];
-    
-    self.arrowPhoto = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
-    [self.view addSubview:self.arrowPhoto];
     
     self.profileSelectionTVC = [[ProfileSelectionTableViewController alloc] initWithNibName:nil bundle:nil];
     self.profileSelectionTVC.delegate = self;
@@ -206,28 +193,7 @@
     
     
     self.profileSelectionTVC.view.frame = CGRectMake(0, CGRectGetMaxY(self.accountButton.frame)+30, CGRectGetWidth(self.view.frame), 44*[ProfileSelectionTableViewController numberOfRows]);
-    
-    [self.createYourFavoriteLabel setFont:tempFont2];
-    self.createYourFavoriteLabel.frame = CGRectMake(0, CGRectGetMaxY(self.profileSelectionTVC.view.frame)+30, CGRectGetWidth(self.view.frame), 30);
-    
-    // Need to update this image....
-    self.arrowPhoto.frame = CGRectMake((CGRectGetWidth(self.view.frame)-12)*0.5, CGRectGetMaxY(self.createYourFavoriteLabel.frame)+10, 12, CGRectGetHeight(self.view.frame)-(CGRectGetMaxY(self.createYourFavoriteLabel.frame)+10)-44-10);
-    self.arrowPhoto.image = [UIImage imageNamed:@"arrow.png"];
-    
-    if (CGRectGetHeight(self.arrowPhoto.frame)>110) {
-        self.arrowPhoto.frame = CGRectMake((CGRectGetWidth(self.view.frame)-12)*0.5, CGRectGetHeight(self.view.frame)-120-44-10, 12, 110);
-        self.createYourFavoriteLabel.frame = CGRectMake(0, CGRectGetHeight(self.view.frame)-110-44-10-30-10, CGRectGetWidth(self.view.frame), 30);
-    }
-    
-    
-    CGFloat tempWidth = [UIScreen mainScreen].bounds.size.width;
-    CGFloat tempHeight = [UIScreen mainScreen].bounds.size.height;
-    if (tempHeight/tempWidth <= 960.0/640.0) {
-        [self.arrowPhoto removeFromSuperview];
-        [self.createYourFavoriteLabel removeFromSuperview];
-    }
 }
-
 
 - (void)showCreateNew {
     

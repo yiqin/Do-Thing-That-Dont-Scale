@@ -47,6 +47,17 @@
     // Mixpanel
     [Mixpanel sharedInstanceWithToken:@"7184be430ae767d71673b3e056afe18e"];
     [TestMixpanel start];
+    /*
+    let deviceName = UIDevice.currentDevice().name
+    var mixpanel = Mixpanel.sharedInstance()
+    mixpanel.people.set("DeviceName", to: deviceName)
+    mixpanel.registerSuperProperties(["DeviceName":deviceName])
+    mixpanel.track("Enter App.")
+    */
+    NSString *deviceName = [[UIDevice currentDevice] name];
+    Mixpanel *mixpanel = [Mixpanel sharedInstance];
+    [mixpanel.people set:@{@"DeviceName": deviceName}];
+    [mixpanel registerSuperProperties:@{@"DeviceName": @"deviceName"}];
     
     // Parse.com
     [Parse setApplicationId:@"E7StxK5eRXAok9R4Ohen8TjNxspF7N97ogokzsSa"

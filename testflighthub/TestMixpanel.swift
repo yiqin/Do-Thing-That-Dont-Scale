@@ -11,10 +11,13 @@ import UIKit
 class TestMixpanel: NSObject {
     
     class func start() {
+        /*
         let deviceName = UIDevice.currentDevice().name
         var mixpanel = Mixpanel.sharedInstance()
         mixpanel.people.set("DeviceName", to: deviceName)
         mixpanel.registerSuperProperties(["DeviceName":deviceName])
+        */
+        var mixpanel = Mixpanel.sharedInstance()
         mixpanel.track("Enter App.")
     }
     

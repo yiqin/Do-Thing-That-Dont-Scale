@@ -83,7 +83,7 @@
     //**************************//
     // change button number here.
     //**************************//
-    int buttonNumber = 5;
+    int buttonNumber = 4;
     CGFloat buttonWidth = CGRectGetWidth(self.tabBarUIView.frame)/buttonNumber;  // five buttons
     
     if (buttonNumber == 5) {
@@ -121,6 +121,38 @@
         
         // Button4
         self.button4 = [[YQButtonWithImage alloc] initWithFrame:CGRectMake(4*buttonWidth, 0, buttonWidth, 45) image:@"profile_unselected" selectedImage:@"profile_selected"];
+        self.button4.autoresizingMask = buttonAutoresizingMask;
+        [self.button4 setTag:4];
+        [self.button4 setSelected:false];
+        [self.button4 addTarget:self action:@selector(tabBarButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+        [self.tabBarUIView addSubview:self.button4];
+    }
+    else if(buttonNumber == 4){
+        self.button0 = [[YQButtonWithImage alloc] initWithFrame:CGRectMake(0, 0, buttonWidth, 45) image:@"trending_unselected" selectedImage:@"trending_selected"];
+        self.button0.autoresizingMask = buttonAutoresizingMask;
+        [self.button0 setTag:0];
+        [self.button0 setSelected:true];
+        [self.button0 addTarget:self action:@selector(tabBarButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+        [self.tabBarUIView addSubview:self.button0];
+        
+        // Button1
+        self.button1 = [[YQButtonWithImage alloc] initWithFrame:CGRectMake(buttonWidth, 0, buttonWidth, 45) image:@"recent_unselected" selectedImage:@"recent_selected"];
+        self.button1.autoresizingMask = buttonAutoresizingMask;
+        [self.button1 setTag:1];
+        [self.button1 setSelected:false];
+        [self.button1 addTarget:self action:@selector(tabBarButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+        [self.tabBarUIView addSubview:self.button1];
+        
+        // Button3
+        self.button3 = [[YQButtonWithImage alloc] initWithFrame:CGRectMake(2*buttonWidth, 0, buttonWidth, 45) image:@"notification_unselected" selectedImage:@"notification_selected"];
+        self.button3.autoresizingMask = buttonAutoresizingMask;
+        [self.button3 setTag:3];
+        [self.button3 setSelected:false];
+        [self.button3 addTarget:self action:@selector(tabBarButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+        [self.tabBarUIView addSubview:self.button3];
+        
+        // Button4
+        self.button4 = [[YQButtonWithImage alloc] initWithFrame:CGRectMake(3*buttonWidth, 0, buttonWidth, 45) image:@"profile_unselected" selectedImage:@"profile_selected"];
         self.button4.autoresizingMask = buttonAutoresizingMask;
         [self.button4 setTag:4];
         [self.button4 setSelected:false];
