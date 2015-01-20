@@ -53,11 +53,23 @@
     mixpanel.people.set("DeviceName", to: deviceName)
     mixpanel.registerSuperProperties(["DeviceName":deviceName])
     mixpanel.track("Enter App.")
+     
+    let deviceId = UIDevice.currentDevice().identifierForVendor.UUIDString
+    let deviceName = UIDevice.currentDevice().name
+
+    var mixpanel = Mixpanel.sharedInstance()
+    mixpanel.identify(deviceId)
+
+    let dictionary = ["deviceId": deviceId, "deviceName": deviceName]
     */
     NSString *deviceName = [[UIDevice currentDevice] name];
+    NSString *deviceId = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
+    
     Mixpanel *mixpanel = [Mixpanel sharedInstance];
+    [mixpanel identify:deviceId];
     [mixpanel.people set:@{@"DeviceName": deviceName}];
-    [mixpanel registerSuperProperties:@{@"DeviceName": @"deviceName"}];
+    [mixpanel registerSuperProperties:@{@"DeviceName": deviceName}];
+    
     
     // Parse.com
     [Parse setApplicationId:@"E7StxK5eRXAok9R4Ohen8TjNxspF7N97ogokzsSa"
