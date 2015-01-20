@@ -1558,6 +1558,7 @@
 				8D19DE151A6BF30200163A61 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8D5EFED01A40A5D8004DF952 /* Build configuration list for PBXProject "testflighthub" */ = {
 			isa = XCConfigurationList;

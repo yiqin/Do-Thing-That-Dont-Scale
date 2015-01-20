@@ -127,16 +127,14 @@
 
 - (void) setContentValue:(Product*)product object:(PFObject*)object
 {
-    if (self.iconImageView.file) {
+    if (product.isLoadingIconImage) {
+        self.iconImageView.file = [object objectForKey:@"iconImage"];
         [self.iconImageView loadInBackground:^(UIImage *image, NSError *error) {
             NSLog(@"successfully loading");
         }];
     }
     else {
-        self.iconImageView.file = [object objectForKey:@"coverImage"];
-        [self.iconImageView loadInBackground:^(UIImage *image, NSError *error) {
-            NSLog(@"successfully loading");
-        }];
+        self.iconImageView.image = product.iconImage;
     }
     
     self.nameLabel.text = [object objectForKey:@"name"];
@@ -193,6 +191,10 @@
 - (void)goToAppStore:(UIButton*)button
 {
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Get the App" message:@"You are going to share your email to the creator of the beta testing app. It's under the policy of Test Flight Program From Apple." delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Share", nil];
+    alertView.alertViewStyle = UIAlertViewStylePlainTextInput;
+    UITextField *textField = [alertView textFieldAtIndex:0];
+    textField.placeholder = @"Enter your email here...";
+    
     [alertView show];
 }
 
@@ -201,6 +203,14 @@
 {
     switch (buttonIndex) {
         case 1:{
+            UITextField *testerEmail = [alertView textFieldAtIndex:0];
+            
+            PFObject *object = [PFObject objectWithClassName:@"SharingEmail"];
+            object[@"TesterEmail"] = testerEmail.text;
+            object[@"product"] = self.product.parseObject;
+            object[@"productName"] = self.product.name;
+            [object saveInBackground];
+            
             UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Thank you" message:@"You will receive the invitation to the app soon. Hope you enjoy the app." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
             [alertView show];
         }
