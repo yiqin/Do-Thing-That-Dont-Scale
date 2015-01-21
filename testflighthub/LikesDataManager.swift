@@ -12,7 +12,7 @@ class LikesDataManager: NSObject {
     
     // var likesCollection : NSMutableSet = NSMutableSet()
     var updatedLikesList : NSMutableSet = NSMutableSet()
-
+    var localLikedList : NSMutableSet = NSMutableSet()
     
     class var sharedInstance : LikesDataManager {
         struct Static {
@@ -21,15 +21,19 @@ class LikesDataManager: NSObject {
         return Static.instance
     }
     
-    /*
     func addLike(product:Product){
-        likesCollection.addObject(product)
+        localLikedList.addObject(product)
     }
     
     func removeLike(product:Product){
-        likesCollection.removeObject(product)
+        localLikedList.removeObject(product)
     }
     
+    func checkLike(product:Product)->Bool{
+        return localLikedList.containsObject(product)
+    }
+    
+    /*
     func checkLike(product:Product)->Bool{
         return likesCollection.containsObject(product)
     }

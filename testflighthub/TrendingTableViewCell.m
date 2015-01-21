@@ -160,7 +160,13 @@
         }];
     }
     else {
-        self.alreadyLike = product.alreadyLike;
+        
+        if ([[LikesDataManager sharedInstance] checkUpdate:self.product]) {
+            self.alreadyLike = [[LikesDataManager sharedInstance] checkLike:self.product];
+        }
+        else {
+            self.alreadyLike = product.alreadyLike;
+        }        
     }
     
     self.timeLabel.text = [object.createdAt shortTimeAgoSinceNow];
@@ -228,6 +234,7 @@
         self.alreadyLike = NO;
         // [[LikesDataManager sharedInstance] addLike:self.product];
         [[LikesDataManager sharedInstance] addUpdate:self.product];
+        [[LikesDataManager sharedInstance] removeLike:self.product];
         self.allLikeCount = [NSNumber numberWithInt:[self.allLikeCount intValue] - 1];    // this number is updated locally after first load.
         
     }
@@ -236,6 +243,7 @@
         self.alreadyLike = YES;
         // [[LikesDataManager sharedInstance] removeLike:self.product];
         [[LikesDataManager sharedInstance] addUpdate:self.product];
+        [[LikesDataManager sharedInstance] addLike:self.product];
         self.allLikeCount = [NSNumber numberWithInt:[self.allLikeCount intValue] + 1];
         
     }
@@ -291,6 +299,11 @@
 - (void)getLikeCount
 {
     if ([[LikesDataManager sharedInstance] checkUpdate:self.product]) {
+        
+        if ([[LikesDataManager sharedInstance] checkLike:self.product]) {
+            self.alreadyLike = YES;
+            NSLog(@"local like....");
+        }
         
         NSLog(@"get like Count On parse");
         
