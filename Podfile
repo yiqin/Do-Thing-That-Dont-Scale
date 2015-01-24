@@ -10,3 +10,4 @@ pod 'QBImagePickerController'
 pod 'AFNetworking'
 pod 'SDCAlertView', :head
 pod 'SVProgressHUD', :head
+pod 'Heap'

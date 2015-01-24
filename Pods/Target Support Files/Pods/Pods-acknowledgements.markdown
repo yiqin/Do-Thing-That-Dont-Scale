@@ -326,6 +326,10 @@ SOFTWARE.
    limitations under the License.
 
 
+## Heap
+
+See https://heapanalytics.com/terms
+
 ## Mixpanel
 
 Copyright 2013 Mixpanel, Inc.

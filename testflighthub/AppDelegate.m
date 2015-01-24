@@ -18,6 +18,7 @@
 #import <SVProgressHUD.h>
 #import <Colours.h>
 #import "YO.h"
+#import "Heap.h"
 
 @interface AppDelegate ()
 
@@ -70,6 +71,8 @@
     [mixpanel.people set:@{@"DeviceName": deviceName}];
     [mixpanel registerSuperProperties:@{@"DeviceName": deviceName}];
     
+    // Heap
+    [Heap setAppId:@"123016339"];
     
     // Parse.com
     [Parse setApplicationId:@"E7StxK5eRXAok9R4Ohen8TjNxspF7N97ogokzsSa"
