@@ -354,6 +354,8 @@ class ProductDetailTableViewController: UITableViewController, AddTextPopoverDel
                     (user: PFUser!, error: NSError!) -> Void in
                     if user == nil {
                         NSLog("Uh oh. The user cancelled the Twitter login.")
+                        TestMixpanel.loginFail();
+                        
                     } else if user.isNew {
                         NSLog("User signed up and logged in with Twitter!")
                         TestMixpanel.loginSuccessFromComment()

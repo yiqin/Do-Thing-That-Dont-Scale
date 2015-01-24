@@ -153,6 +153,11 @@ class TestMixpanel: NSObject {
         mixpanel.track("Logout and Clear")
     }
     
+    class func loginFail() {
+        var mixpanel = Mixpanel.sharedInstance()
+        mixpanel.track("Login Fail")
+    }
+    
     class func loginSuccessFromProfileView() {
         var mixpanel = Mixpanel.sharedInstance()
         mixpanel.track("Login Success", properties: ["From Where":"Profile View"])

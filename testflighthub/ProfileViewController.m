@@ -221,6 +221,7 @@
         [PFTwitterUtils logInWithBlock:^(PFUser *user, NSError *error) {
             if (!user) {
                 NSLog(@"Uh oh. The user cancelled the Twitter login.");
+                [TestMixpanel loginFail];
                 return;
             } else if (user.isNew) {
                 NSLog(@"User signed up and logged in with Twitter!");
