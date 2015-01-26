@@ -212,7 +212,7 @@
             </objects>
             <point key="canvasLocation" x="-14" y="1255"/>
         </scene>
-        <!--T R E N D I N G-->
+        <!--D O & S C A L E-->
         <scene sceneID="O9s-te-qCU">
             <objects>
                 <tableViewController id="wz9-xg-GrK" customClass="TrendingTableViewController" sceneMemberID="viewController">
@@ -233,7 +233,7 @@
                             <outlet property="delegate" destination="wz9-xg-GrK" id="yMs-tT-mr1"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="T R E N D I N G" id="Pvv-A2-dou"/>
+                    <navigationItem key="navigationItem" title="D O &amp; S C A L E" id="Pvv-A2-dou"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <segue destination="zHO-8L-gYt" kind="show" identifier="PushSegure0" id="i2g-CW-h9U"/>

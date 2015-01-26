@@ -124,18 +124,55 @@ class ProductDetailViewController: UIViewController {
         }
         alertController.addAction(destroyAction)
         
-        let OKAction = UIAlertAction(title: "Get App", style: .Default) { (action) in
+        let OKAction = UIAlertAction(title: "Get Beta App", style: .Default) { (action) in
+            /*
             let url = self.product.website
             UIApplication.sharedApplication().openURL(url)
             TestMixpanel.getAppFromProductDetailView()
+            */
+            /*
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Get the Beta Testing App" message:@"You are going to share your email to the creator of the beta testing app. It's under the policy of Test Flight Program From Apple." delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Share", nil];
+            alertView.alertViewStyle = UIAlertViewStylePlainTextInput;
+            UITextField *textField = [alertView textFieldAtIndex:0];
+            textField.placeholder = @"Enter your email here...";
+            
+            [alertView show];
+            */
+            
+            /*
+            let alertControllerGET = UIAlertController(title: "Get the Beta Testing App", message: "You are going to share your email to the creator of the beta testing app. It's under the policy of Test Flight Program From Apple.", preferredStyle: .Alert)
+            
+            let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (_) in }
+            let loginAction = UIAlertAction(title: "Share", style: .Default) { (_) in
+                let loginTextField = alertController.textFields![0] as UITextField
+                
+            }
+            loginAction.enabled = false
+            
+            alertControllerGET.addTextFieldWithConfigurationHandler { (textField) in
+                textField.placeholder = "Email"
+                
+                NSNotificationCenter.defaultCenter().addObserverForName(UITextFieldTextDidChangeNotification, object: textField, queue: NSOperationQueue.mainQueue()) { (notification) in
+                    loginAction.enabled = textField.text != ""
+                }
+            }
+            
+            alertControllerGET.addAction(cancelAction)
+            alertControllerGET.addAction(loginAction)
+            
+            self.presentViewController(alertControllerGET, animated: true) {
+                // ...
+            }
+            */
+            
         }
-        alertController.addAction(OKAction)
+        // alertController.addAction(OKAction)
         
         let CopyUrlAction = UIAlertAction(title: "Copy URL", style: .Default) { (action) in
             UIPasteboard.generalPasteboard().string = self.product.website.absoluteString
             TestMixpanel.copyAppURL()
         }
-        alertController.addAction(CopyUrlAction)
+        // alertController.addAction(CopyUrlAction)
         
         if let popoverController = alertController.popoverPresentationController {
             popoverController.barButtonItem = sender

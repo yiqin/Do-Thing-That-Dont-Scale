@@ -83,7 +83,7 @@
         [self addSubview:self.descriptionLabel];
         [self addSubview:self.taglineLabel];
         
-        CGFloat buttonWidth = 55;
+        CGFloat buttonWidth = 90;
         CGFloat buttonHeight = 30;
         
         
@@ -91,8 +91,8 @@
         self.getButton = [[AYVibrantButton alloc] initWithFrame:CGRectMake(CGRectGetWidth(self.frame)-buttonWidth-16, CGRectGetHeight(self.frame)-buttonHeight-16, buttonWidth, buttonHeight) style:AYVibrantButtonStyleInvert];
         // self.getButton.vibrancyEffect = [UIVibrancyEffect effectForBlurEffect:[UIBlurEffect effectWithStyle:UIBlurEffectStyleExtraLight]];
         self.getButton.vibrancyEffect = nil;
-        self.getButton.text = @"GET";
-        self.getButton.font = [UIFont fontWithName:@"Lato-Bold" size:15.0];
+        self.getButton.text = @"GET  BETA";
+        self.getButton.font = [UIFont fontWithName:@"Lato-Bold" size:14.0];
         
         
         // self.getButton.cornerRadius = buttonHeight*0.5;
@@ -196,7 +196,7 @@
 
 - (void)goToAppStore:(UIButton*)button
 {
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Get the App" message:@"You are going to share your email to the creator of the beta testing app. It's under the policy of Test Flight Program From Apple." delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Share", nil];
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Get the Beta Testing App" message:@"You are going to share your email to the creator of the beta testing app. It's under the policy of Test Flight Program From Apple." delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Share", nil];
     alertView.alertViewStyle = UIAlertViewStylePlainTextInput;
     UITextField *textField = [alertView textFieldAtIndex:0];
     textField.placeholder = @"Enter your email here...";
