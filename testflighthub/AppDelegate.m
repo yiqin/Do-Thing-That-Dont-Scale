@@ -19,6 +19,7 @@
 #import <Colours.h>
 #import "YO.h"
 #import "Heap.h"
+#import "GAI.h"
 
 @interface AppDelegate ()
 
@@ -73,6 +74,10 @@
     
     // Heap
     [Heap setAppId:@"123016339"];
+    
+    // Google Analytics
+    // Initialize tracker. Replace with your tracking ID.
+    [[GAI sharedInstance] trackerWithTrackingId:@"UA-51208804-12"];
     
     // Parse.com
     [Parse setApplicationId:@"E7StxK5eRXAok9R4Ohen8TjNxspF7N97ogokzsSa"

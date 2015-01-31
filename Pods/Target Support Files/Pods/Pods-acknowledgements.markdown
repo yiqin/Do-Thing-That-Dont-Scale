@@ -326,6 +326,11 @@ SOFTWARE.
    limitations under the License.
 
 
+## GoogleAnalytics-iOS-SDK
+
+Copyright 2009 - 2014 Google, Inc. All rights reserved.
+
+
 ## Heap
 
 See https://heapanalytics.com/terms

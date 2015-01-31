@@ -26,6 +26,9 @@ PODS:
   - DateTools (1.4.3)
   - Facebook-iOS-SDK (3.21.1):
     - Bolts (~> 1.0)
+  - GoogleAnalytics-iOS-SDK (3.10):
+    - GoogleAnalytics-iOS-SDK/Core (= 3.10)
+  - GoogleAnalytics-iOS-SDK/Core (3.10)
   - Heap (2.1.0)
   - Mixpanel (2.6.2):
     - Mixpanel/MPCategoryHelpers (= 2.6.2)
@@ -51,6 +54,7 @@ DEPENDENCIES:
   - AYVibrantButton
   - Colours
   - DateTools
+  - GoogleAnalytics-iOS-SDK (~> 3.10)
   - Heap
   - Mixpanel
   - Parse
@@ -66,6 +70,7 @@ SPEC CHECKSUMS:
   Colours: 7abeb0fdebe2da3d8bd7305aee0798375f51f5d8
   DateTools: 7c2d233ea2d4bda3a717d0cd5f58da926a5998d0
   Facebook-iOS-SDK: 18c26e86ab25c17854a2ee2a8f60562099c6600f
+  GoogleAnalytics-iOS-SDK: f422062075d9ccb1ea8d783fc5ba3829461e9502
   Heap: 648c5f71d7a6f9f35bcec485c7446548a892c8f6
   Mixpanel: c075cedebda3328ce1ee29a18429e265ce967cd8
   Parse: f15dfacd941ee8084a5decbef486da8b223c2810

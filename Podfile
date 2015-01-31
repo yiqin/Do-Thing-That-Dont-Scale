@@ -11,3 +11,4 @@ pod 'AFNetworking'
 pod 'SDCAlertView', :head
 pod 'SVProgressHUD', :head
 pod 'Heap'
+pod 'GoogleAnalytics-iOS-SDK', '~> 3.10'

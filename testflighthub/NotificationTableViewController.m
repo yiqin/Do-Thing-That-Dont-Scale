@@ -12,6 +12,10 @@
 #import <Parse/Parse.h>
 #import <testflighthub-Swift.h>
 
+#import "GAI.h"
+#import "GAIDictionaryBuilder.h"
+#import "GAIFields.h"
+
 @interface NotificationTableViewController ()
 @property (nonatomic, assign) BOOL shouldReloadOnAppear;
 
@@ -61,6 +65,11 @@
 
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    
+    id tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"Notification Screen"];
+    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
+    
     [self.navigationController setNavigationBarHidden:NO animated:YES];
     self.navigationController.tabBarController.tabBar.hidden = YES;
     

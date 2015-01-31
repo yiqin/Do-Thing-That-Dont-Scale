@@ -34,6 +34,8 @@
 #import "SVWebViewController.h"
 #import "ProductWebsiteViewController.h"
 
-
-
+#import "GAI.h"
+#import "GAIDictionaryBuilder.h"
+#import "GAIFields.h"
+#import "GAITrackedViewController.h"
 

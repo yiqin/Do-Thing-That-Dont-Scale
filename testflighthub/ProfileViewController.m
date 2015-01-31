@@ -11,6 +11,10 @@
 #import <SVProgressHUD.h>
 #import <Parse/Parse.h>
 
+#import "GAI.h"
+#import "GAIDictionaryBuilder.h"
+#import "GAIFields.h"
+
 #import <TwitterKit/TwitterKit.h>   // Not user any more.
 
 @interface ProfileViewController()
@@ -115,6 +119,12 @@
 
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    
+    id tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"Profile Screen"];
+    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
+    
+    
     if (![[UserManager sharedInstance] checkUserLoginWithTwitter]) {
         self.userPhoto.image = [UIImage imageNamed:@"profile"];
         self.userPhoto.backgroundColor = [UIColor colorWithRed:0.95 green:0.95 blue:0.95 alpha:0.98];

@@ -11,6 +11,10 @@
 #import <testflighthub-Swift.h>
 #import "NSDate+DateTools.h"
 
+#import "GAI.h"
+#import "GAIDictionaryBuilder.h"
+#import "GAIFields.h"
+
 @interface RecentsViewController ()
 @property (nonatomic, assign) BOOL shouldReloadOnAppear;
 
@@ -67,6 +71,14 @@
 
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    
+    
+    id tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"Recents Screen"];
+    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
+    
+    
+    
     [self.navigationController setNavigationBarHidden:NO animated:YES];
     
     self.navigationController.tabBarController.tabBar.hidden = YES;
